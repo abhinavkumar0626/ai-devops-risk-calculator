@@ -20,6 +20,7 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
+        
 
       - name: Show environment
         run: |
@@ -48,3 +49,6 @@ jobs:
             pytest.log
             test-results
             tests/output
+      - name: AI Risk Check
+        run: python ml/predict.py 10 200 50 400
+
